@@ -1,0 +1,30 @@
+C:\Program Files\Microsoft SQL Server\130\Tools\Binn
+微软自带的sql localDB.exe
+
+databasefrist modelfrist codefrist
+
+entity framework  微软以ADO.net为基础所发展出来的对象关系对应(ORM)解决方案
+(nuget, 已开源)
+
+如果选项中没有 SQL Server Compact Local Database，则说明您尚未在计算机上安装 SQL Server Compac。请通过以下链接进行安装：SQL Server Compact
+
+
+using System;
+using System.Data.Entity;
+
+namespace Moives.Models
+{
+    public class Movie
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public DateTime ReleaseDate { get; set; }
+        public string Genre { get; set; }
+        public decimal Price { get; set; }
+    }
+
+    public class MovieDBContext : DbContext
+    {
+        public DbSet<Movie> Movies { get; set; }
+    }
+}
