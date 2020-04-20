@@ -1,0 +1,13 @@
+controller中:
+
+ViewBag.Num = 5;
+ViewBag.Message = "string";
+
+
+view中:
+<ul>
+    @for (int i = 0; i< ViewBag.Num; i++)
+    {
+      <li>@ViewBag.Message</li>
+      }
+ </ul>
