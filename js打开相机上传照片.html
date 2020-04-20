@@ -1,0 +1,15 @@
+//实现android手机打开相册及打开相机功能：
+
+<input class="js_upFile cover1" type="file" name="cover" accept="image/*" capture="camera" multiple/>
+　
+//对手机系统类型进行判断：
+
+$(function () {
+    //获取浏览器的userAgent,并转化为小写
+    var ua = navigator.userAgent.toLowerCase();
+    //判断是否是苹果手机，是则是true
+    var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
+    if (isIos) {
+        $("input:file").removeAttr("capture");
+    };
+})
