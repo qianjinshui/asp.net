@@ -11,3 +11,18 @@ view中:
       <li>@ViewBag.Message</li>
       }
  </ul>
+ 
+ html：
+            @for (int i = 0; i<ViewBag.Num;i++)
+            {
+                <li>@Html.EditorFor(model => model.InspectOb)
+                    @Html.ValidationMessageFor(model => model.InspectOb)</li>
+            }
+            <div>@Html.ActionLink("addddddddd","Create",new { i = ViewBag.Num })"</div>
+            
+controller：
+           public ActionResult Create(int i = 0)
+            {
+                ViewBag.Num = i+1;
+                return View();
+            }
