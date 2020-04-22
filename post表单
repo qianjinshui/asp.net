@@ -1,0 +1,10 @@
+<form action="Create" method="post">
+    <p>InspectOb: <input type="text" name="InspectOb" /></p>
+    <p>InspectType: <input type="text" name="InspectType" /></p>
+    <p>Postion: <input type="text" name="Postion" /></p>
+    <p>PartNum: <input type="text" name="PartNum" /></p>
+    <p>XJcode: <input type="text" name="XJcode" /></p>
+    <p>ImageMimeType: <input type="text" name="ImageMimeType" /></p>
+    <p>Addtion: <input type="text" name="Addtion" /></p>
+  <input type="submit" value="Submit" />
+</form>
