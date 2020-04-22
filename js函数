@@ -1,0 +1,30 @@
+<input type="button" onclick="myfunction()" value="click" />        
+        <script>
+            function myfunction(){
+
+                alert("我的第一个 JavaScript");
+
+                var table = document.createElement("table");
+
+                //table.setAttribute('border', '1');
+                //table.setAttribute('width', '100%')
+                var row = table.insertRow(0);
+                for (j = 1; j <= 10; j++) {
+                    //var text = document.createTextNode("adada");
+
+                    var input = document.createElement(@Html.TextBox("width:50px"));
+                  //  input.setAttribute("type", 'text');
+                  //  input.setAttribute("style", 'width:30px');
+                    var cell = row.insertCell(j - 1);
+                    cell.setAttribute('align', 'center')
+                    //cell.appendChild(text);
+                    cell.appendChild(input);
+                }
+                
+
+                document.getElementById("q123").appendChild(table);
+                
+                }
+
+
+        </script>
