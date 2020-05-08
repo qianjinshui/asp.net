@@ -1,0 +1,161 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script src="{% static 'JS/jquery-3.4.1.min.js' %}"></script>
+</head>
+
+<body>
+<input type="text" id="server_name">
+<button id="search_server">提交</button>
+
+
+<p id="test1"></p>
+
+<p>
+    <li>{{it}}</li>
+    <li id="haha">ffff</li>
+    {% for i in it %}
+    <li>{{i}}</li>
+    {%empty%}
+    <li>nothoing</li>
+    {%endfor%}
+
+</p>
+<p id="test2"></p>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="a">
+　　<input type="text" name="b">
+    <input type="text" name="b">
+    <input type="text" name="b">
+    <input class="js_upFile cover1" type="file" name="cover" accept="image/*" capture="camera" />
+    <input type="submit" value="Vote">
+</form>
+
+
+
+
+
+
+
+<table class="table" id="tabTravelDetail">
+    <tr style="background-color:#e9ecef">
+        <td>机种</td>
+        <td>部番</td>
+        <td>面</td>
+        <td>项目</td>
+        <td>操作</td>
+    </tr>
+    <tr>
+        <td>
+            <select name="relationship" maxlength="50"
+                    class="form-control custom-select">
+                <option value="" selected="">--请选择--</option>
+                <option value="1">q</option>
+                <option value="2">w</option>
+                <option value="3">e</option>
+                <option value="4">r</option>
+                <option value="5">t</option>
+                <option value="6">y</option>
+                <option value="7">u</option>
+                <option value="8">i</option>
+            </select>
+        </td>
+        <td>
+            <input type="text" name="re_name" maxlength="50"
+                   class="form-control">
+        </td>
+        <td>
+            <input type="text" name="re_number"
+                   maxlength="50" class="form-control">
+        </td>
+        <td>
+            <input type="text" name="re_address"
+                   maxlength="50" class="form-control">
+        </td>
+        <td align="center">
+            <input type="button" onclick="AddTr()" value=" + ">
+        </td>
+    </tr>
+</table>
+
+<table id="tmpTrvael" style="display: none">
+    <tr>
+        <td>
+            <select name="relationship" maxlength="50"
+                    class="form-control custom-select">
+                <option value="" selected="">--请选择--</option>
+                <option value="1">q</option>
+                <option value="2">w</option>
+                <option value="3">e</option>
+                <option value="4">r</option>
+                <option value="5">t</option>
+                <option value="6">y</option>
+                <option value="7">u</option>
+                <option value="8">i</option>
+            </select>
+        </td>
+        <td>
+            <input type="text" name="re_name" maxlength="50"
+                   class="form-control">
+        </td>
+        <td>
+            <input type="text" name="re_number"
+                   maxlength="50" class="form-control">
+        </td>
+        <td>
+            <input type="text" name="re_address"
+                   maxlength="50" class="form-control">
+        </td>
+        <td align="center">
+            <input type="button" onclick="RemoveTr(this)" value=" - ">
+        </td>
+    </tr>
+</table>
+
+
+<input type="button" onclick="myFunction()" value="click me">
+
+<script>
+
+        var clickTimes = 0;
+
+        function AddTr() {
+            $("#tabTravelDetail").append($("#tmpTrvael").html());
+        };
+
+
+        function myF(){
+            document.getElementById("haha").innerHTML="fuck<br>";
+        };
+
+        function myFunction()
+        {
+            clickTimes = clickTimes+1;
+            var x = "";
+            for (var i=0; i<clickTimes; i++)
+            {
+                  x= x + "该数字为 " + i + "<br>";
+                  x2 =  "";
+
+
+            }
+            document.getElementById("test1").innerHTML=x;
+            document.getElementById("test2").innerHTML=x2;
+        };
+
+
+
+
+        function RemoveTr(obj) {
+            $(obj).parent().parent().remove();
+        };
+
+</script>
+
+</body>
+</html>
